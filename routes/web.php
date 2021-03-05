@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\ContactController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get( 'contact', [ ContactController::class, 'index' ] );
+Route::post( 'contact', [ ContactController::class, 'store' ] );
