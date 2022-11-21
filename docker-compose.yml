@@ -22,13 +22,11 @@ services:
   mysql-db:
     image: mysql:5.7
     container_name: mysql-db
-    volumes:
-      - ./run/var:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=securerootpassword
-      - MYSQL_DATABASE=${DB_DATABASE}
-      - MYSQL_USER=${DB_USERNAME}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: your_mysql_root_password
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
     networks:
       backend:
         aliases:

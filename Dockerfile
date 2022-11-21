@@ -28,6 +28,7 @@ RUN a2enmod rewrite headers
 
 # 4. start with base php config, then add extensions
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # 5. composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

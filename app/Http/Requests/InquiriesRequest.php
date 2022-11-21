@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Inquiries request validation
  */
@@ -23,10 +24,13 @@ class InquiriesRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'    => 'required|max:50',
-            'email'   => 'required|email|max:50',
-            'phone'   => 'required|numeric|digits_between:9,20',
-            'message' => 'required|max:500',
+            'name'       => 'required|max:50',
+            'email'      => 'required|email|max:50',
+            'phone'      => 'required|numeric|digits_between:9,20',
+            'message'    => 'required|max:500',
+            'start_date' => 'required|date',
+            'end_date'   => 'required|date|after_or_equal:start_date',
+            'address' => 'required_if:need_on_site_service,true',
         ];
     }
 }

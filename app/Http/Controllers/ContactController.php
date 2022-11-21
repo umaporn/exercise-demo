@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Contact controller
  */
@@ -26,7 +27,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view( 'contact' );
+        return view('contact');
     }
 
     /**
@@ -36,13 +37,17 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store( InquiriesRequest $request )
+    public function store(InquiriesRequest $request)
     {
         $inquirie          = new Inquiries;
         $inquirie->name    = $request->name;
         $inquirie->email   = $request->email;
         $inquirie->phone   = $request->phone;
         $inquirie->message = $request->message;
+        $inquirie->start_date = $request->start_date;
+        $inquirie->end_date = $request->end_date;
+        $inquirie->need_on_site_service = $request->need_on_site_service;
+        $inquirie->address = $request->address;
         $inquirie->save();
 
         $details = [
@@ -50,11 +55,11 @@ class ContactController extends Controller
             'body'       => 'This is ' . $inquirie->name . ' greeting message. "' . $inquirie->message . '"',
             'thanks'     => 'Thank you',
             'actionText' => 'Back to site',
-            'actionURL'  => url( '/' ),
+            'actionURL'  => url('/'),
             'id'         => $inquirie->id,
         ];
 
-        Notification::send( $inquirie, new InquiriesNotifications( $details ) );
+        Notification::send($inquirie, new InquiriesNotifications($details));
 
         return response()->json(
             [
@@ -63,5 +68,4 @@ class ContactController extends Controller
             ]
         );
     }
-
 }
