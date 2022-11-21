@@ -28,8 +28,8 @@ class InquiriesRequest extends FormRequest
             'email'      => 'required|email|max:50',
             'phone'      => 'required|numeric|digits_between:9,20',
             'message'    => 'required|max:500',
-            'start_date' => 'required|date',
-            'end_date'   => 'required|date|after_or_equal:start_date',
+            'start_date' => 'required|date_format:Y-m-d H:i:s',
+            'end_date'   => 'required|date_format:Y-m-d H:i:s|after_or_equal:start_date',
             'address' => 'required_if:need_on_site_service,true',
         ];
     }

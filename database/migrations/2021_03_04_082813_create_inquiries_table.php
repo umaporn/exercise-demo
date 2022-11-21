@@ -19,8 +19,8 @@ class CreateInquiriesTable extends Migration
             $table->string('email', 254);
             $table->string('phone', 20);
             $table->text('message');
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->dateTime('start_date');
+            $table->dateTime('end_date');
             $table->enum('need_on_site_service', [true, false])->nullable();
             $table->text('address')->nullable();
             $table->timestamp('updated_at');

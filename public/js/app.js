@@ -2088,7 +2088,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     register: function register() {
       var _this = this;
-      axios__WEBPACK_IMPORTED_MODULE_0___default().post('/contact', this.form).then(function (response) {
+      this.form.post('/contact').then(function (response) {
         var attr = document.getElementById('response-message');
         _this.isInvisible = false;
         attr.innerHTML = response.data.message;

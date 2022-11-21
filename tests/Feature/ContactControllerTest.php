@@ -21,8 +21,8 @@ class ContactControllerTest extends TestCase
             'email'   => 'john@gmail.com',
             'phone'   => '123456789',
             'message' => 'greeting text',
-            'start_date' => '2022-11-20',
-            'end_date' => '2022-11-21',
+            'start_date' => '2022-11-20 08:00:00',
+            'end_date' => '2022-11-21 17:00:00',
             'need_on_site_service' => true,
             'address' => '2828 Walker Field Dr,	Grand Junction',
         ]);
@@ -34,8 +34,8 @@ class ContactControllerTest extends TestCase
             'email'   => 'john@gmail.com',
             'phone'   => '123456789',
             'message' => 'greeting text',
-            'start_date' => '2022-11-20',
-            'end_date' => '2022-11-21',
+            'start_date' => '2022-11-20 08:00:00',
+            'end_date' => '2022-11-21 17:00:00',
             'need_on_site_service' => true,
             'address' => '2828 Walker Field Dr,	Grand Junction',
         ]);
@@ -50,8 +50,8 @@ class ContactControllerTest extends TestCase
             'email'   => 'umaporn.don@gmail.com',
             'phone'   => '123456789',
             'message' => 'greeting text',
-            'start_date' => '2022-11-20',
-            'end_date' => '2022-11-21',
+            'start_date' => '2022-11-20 08:00:00',
+            'end_date' => '2022-11-21 17:00:00',
             'need_on_site_service' => true,
             'address' => '2828 Walker Field Dr,	Grand Junction',
         ]);

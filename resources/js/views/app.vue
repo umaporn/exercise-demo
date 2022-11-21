@@ -99,8 +99,8 @@ export default {
 	methods: {
 
 		register() {
-			axios.post('/contact', this.form)
-				.then(response => {
+			this.form.post('/contact')
+				.then((response) => {
 					var attr = document.getElementById('response-message');
 					this.isInvisible = false;
 					attr.innerHTML = response.data.message;
