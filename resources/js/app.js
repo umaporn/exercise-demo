@@ -11,6 +11,6 @@ Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
 
 const app = new Vue({
-	                    el: '#app',
-	                    components: { App }
-                    });
+	el: '#app',
+	components: { App }
+});
